@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//1、声明了但未赋值
+	document.write("<h3>1、声明了但未赋值</h3>");
+	var a //声明了变量x，但是没有赋值
+	document.write('声明了，但是没有赋值的变量 a:' + a);
+	document.write("<br>");
+	//2、布尔
+	document.write("<h3>2、布尔</h3>");
+	var b = true;
+	var c = false;
+	document.write("布尔值：" + b);
+	document.write("<br>");
+	document.write("布尔值：" + c);
+	document.write("<br>");
+	//3、数字
+	document.write("<h3>3、数字</h3>");
+	var d = 10;//十进制
+	var e = 012;//第一位是0，表示八进制
+	var f = 0xA;//0x开头表示十六进制
+	var g = 3.14;//有小数点表示十六进制
+	var h = 3.14e2;//使用e的幂表示科学计数法
+	document.write("十进制 10 的值: " + d);
+	document.write("<br>");
+	document.write("八进制 012 的值: " + e);
+	document.write("<br>");
+	document.write("十六进制 0xA 的值: "+ f);
+	document.write("<br>");
+	document.write("浮点数 3.14 的值: " + g);
+	document.write("<br>");
+	document.write("科学记数法 3.14e2 的值: "+ h);
+	document.write("<br>");
+	//4、字符串
+	document.write("<h3>4、字符串</h3>");
+	var i = 'hello';//单引号
+	var j = "javascript";//双引号
+	document.write("单引号的字符串：" + i);
+	document.write("<br>");
+	document.write("双引号的字符串：" + j);
+	document.write("<br>");
+	//5、动态类型
+	document.write("<h3>5、动态类型</h3>");
+	var k = 10;//Number类型
+	document.write("此时k的值是：" + k + "，类型是数字");
+	document.write("<br>");
+	var l = "hello javascript";//String类型
+	document.write("此时 l 的值是：" + l + "，类型是字符串");
+	//6、变量类型判断
+	document.write("<h3>6、变量类型判断</h3>");
+	var m;
+	document.write("声明了但是未赋值的时候，类型是：" + typeof m);
+	document.write("<br>");
+	var n = 5;
+	document.write("赋值为5的时候，类型是：" + typeof n);
+	document.write("<br>");	
+	var o = 5.1;
+	document.write("赋值为5.1的时候，类型是：" + typeof o);
+	document.write("<br>");		
+	var p = true;
+	document.write("赋值为true的时候，类型是：" + typeof p);
+	document.write("<br>");		
+	var q = "hello";
+	document.write("赋值为hello的时候，类型是：" + typeof q);
+	document.write("<br>");		
+	//7、空对象、对象不存在
+	document.write("<h3>7、空对象、对象不存在</h3>");
+	document.write("<p>null表示一个对象不存在，因为本章节讲的都是基本类型，而null是和对象相关的，所以会放在javascript中的对象中进行讲解</p>");
+</script>
+</head>
+<body>
+	
+</body>
+</html>
