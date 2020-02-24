@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 1、函数 -->
+<script type="text/javascript">
+	function print(){
+		document.write("这一句话是由一个自定义函数打印");
+		document.write("<br>");
+	}
+	print();
+</script>
+<!-- 2、带参数的函数 -->
+<script type="text/javascript">
+	function print(message){
+		document.write(message);
+		document.write("<br>");
+	}
+	print("第一句话");
+	print("第二句话");
+</script>
+<!-- 3、带返回值的函数 -->
+<script type="text/javascript">
+	function print(message){
+		document.write(message);
+		document.write("<br>");
+	}
+	
+	function calc(x,y){
+		return x + y;
+	}
+	var sum = calc(500,20);
+	print(sum);
+</script>
+</head>
+<body>
+
+</body>
+</html>
