@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	input{
+		width: 50px;
+	}
+</style>
+<script type="text/javascript">
+	function p(s){
+		document.write(s);
+		document.write("<br>")
+	}
+	//1、创建一个数字对象
+	document.write("<h3>1、创建一个数字对象</h3>");
+	var x = new Number(123);
+	p("数字对象x的值：" + x);
+	p("数字对象x的类型：" + typeof x);
+	var y = 123;
+	p("基本类型y的值：" + y);
+	p("基本类型y的类型：" + typeof y);
+	//2、最小值 最大值
+	document.write("<h3>2、最小值 最大值</h3>");
+	p("Number对象的最小值：" + Number.MIN_VALUE);
+	p("Number对象的最大值：" + Number.MAX_VALUE);
+	//3、表示不是数字
+	document.write("<h3>3、表示不是数字</h3>");
+	var a = new Number("123abc");//通过非数字创建Number对象，得到的是一个NaN
+	var b = new Number("123");
+	var c = new Number(123);
+	p("通过非数字字符串123abc创建出来的Number对象a的值是：" + a);
+	p("通过数字字符串123创建出来的Number对象b的值是：" + b);
+	p("通过数字123创建出来的Number对象c的值是：" + c);
+	p("但是, a==Number.NaN会返回:" + (a==Number.NaN));////即便是一个NaN 也"不等于" Number.NaN
+	p("但是, b==Number.NaN会返回:" + (b==Number.NaN));
+	p("但是, c==Number.NaN会返回:" + (c==Number.NaN));
+	p('正确判断是否是NaN的方式是调用isNaN函数:isNaN(a)：' + isNaN(a));//正确的方式是通过isNaN() 函数进行判断,true表示不是数字
+	p('正确判断是否是NaN的方式是调用isNaN函数:isNaN(b)：' + isNaN(b));
+	p('正确判断是否是NaN的方式是调用isNaN函数:isNaN(c)：' + isNaN(c));
+	//4、返回一个数字的小数表达
+	document.write("<h3>4、返回一个数字的小数表达</h3>");
+	var d = new Number("123");
+	p("数字对象123通过toFixed(2) 保留两位小数：" + d.toFixed(2));//保留两位小数
+	var e = new Number("3.1415926");
+	p("PI 通过toFixed(3) 保留三位小数：" + e.toFixed(3));//保留三位小数
+	//5、返回一个数字的科学计数法表达
+	document.write("<h3>5、返回一个数字的科学计数法表达</h3>");
+	var f = new Number("123");
+	p("数字对象123通过toExponential 返回计数法表达：" + f.toExponential());
+	var g = new Number("3.1415926");
+	p("数字对象3.1415926通过toExponential 返回计数法表达：" + g.toExponential());
+	//6、返回一个数字对象的基本数字类型
+	document.write("<h3>6、返回一个数字对象的基本数字类型</h3>");
+	var h = new Number("123");
+	var i = h.valueOf();
+	p("数字对象h的类型是：" + typeof h);//返回object
+	p("通过valueOf()返回值得类型是：" + typeof i);//返回number
+	//7、练习-乘法
+	document.write("<h3>7、练习-乘法</h3>");
+	function calc(){
+		var num1 = document.getElementById("num1").value;
+		var num2 = document.getElementById("num2").value;
+		num1 = parseFloat(num1);
+		num2 = parseFloat(num2);
+		var result = num1 * num2;
+		var num = new Number(result);
+		document.getElementById("result").value = num.toExponential();
+	}
+</script>
+</head>
+<body>
+	<input type="text" id="num1"> * <input type="text" id="num2"> = <input type="text" id="result">
+	<input type="button" value="运算" onclick="calc()">
+</body>
+</html>
