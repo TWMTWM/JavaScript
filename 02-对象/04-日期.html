@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function p(s){
+		document.write(s);
+		document.write("<br>");
+	}
+	//1、创建日期对象
+	document.write("<h3>1、创建日期对象</h3>");
+	var a = new Date();
+	p("new Date()：" + a);
+	//2、年、月、日
+	document.write("<h3>2、年、月、日</h3>");
+	var b = new Date();
+	p("分别获取年月日：");
+	document.write(b.getFullYear());
+	document.write("/");
+	document.write(b.getMonth() + 1);
+	document.write("/");
+	document.write(b.getDate());
+	//3、时、分、秒、毫秒
+	document.write("<h3>3、时、分、秒、毫秒</h3>");
+	var c = new Date();
+	p("分别获取时:分:秒:毫秒： ");
+	document.write(c.getHours());
+	document.write(":");
+	document.write(c.getMinutes());
+	document.write(":");
+	document.write(c.getSeconds());
+	document.write(":");
+	document.write(c.getMilliseconds());
+	//4、一周的第几天
+	document.write("<h3>4、一周的第几天</h3>");
+	var day = new Date().getDay();//通过日期对象获取数字形式的星期几
+	var weeks = new Array("星期天","星期一","星期二","星期三","星期四","星期五","星期六");
+	p("今天是：" + weeks[day]);
+	//5、经历的毫秒数
+	document.write("<h3>5、经历的毫秒数</h3>");
+	var time = new Date().getTime();
+	p("从1970/1/1 08:00:00 到今天的毫秒数：" + time);
+	//6、修改日期和时间
+	document.write("<h3>6、修改日期和时间</h3>");
+	var d = new Date();
+	p("修改日期对象的值为世界末日:2012/12/12 00:00:00");
+	d.setFullYear(2012);
+	d.setMonth(11);//月份是基0的，所以11表示12月
+	d.setDate(12);
+	
+	d.setHours(0);
+	d.setMinutes(0);
+	d.setSeconds(0);
+	d.setMilliseconds(0);
+	
+	p(d);
+	//7、练习-计算年龄
+	document.write("<h3>7、练习-计算年龄</h3>");
+	function calc(){
+		  var year = document.getElementById("year").value;
+		  var month = document.getElementById("month").value;
+		  var day = document.getElementById("day").value;
+		  var today=new Date();
+		  var birthday=new Date();
+		  birthday.setFullYear(year );
+		  birthday.setMonth(month -1);
+		  birthday.setDate(day); 
+		  var nowTime = today.getTime();
+		  var birthTime = birthday.getTime();
+		  console.log(nowTime);
+		  console.log(birthday);
+		  var age = (nowTime -birthTime) /(1000*60*60*24*365);
+		  age= Math.round(age);
+		 
+		  document.getElementById("age").innerHTML=age;
+	}
+</script>
+</head>
+<body>
+	请输入出生年月日<br>
+	年份
+	<select id="year">
+		<script>
+			for(i=1900;i<2020;i++){
+				document.write("<option value='"+i+"'>"+i+"</option>");
+			}
+		</script>
+	</select>
+	月份
+	<select id="month">
+		<script>
+			for(i=1;i<13;i++){
+				document.write("<option value='"+i+"'>"+i+"</option>");
+			}
+		</script>
+	</select>
+	日
+	<select>
+		<script id="day">
+			for(i=1;i<32;i++){
+				document.write("<option value='"+i+"'>"+i+"</option>");
+			}
+		</script>
+	</select>
+	<br>
+	<br>
+	<button onclick="calc()">计算年龄</button>
+	<br>
+	<br>
+	今年<span id="age">100</span>岁
+</body>
+</html>
