@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function p(s){
+		document.write(s);
+		document.write("<br>");
+	}
+	//1、循环语句 for
+	document.write("<h3>1、循环语句 for</h3>");
+	document.write("使用for循环打印 0 到 4<br>");
+	for(var i = 0;i<5;i++){
+		p(i);
+	}
+	//2、循环语句 while
+	document.write("<h3>2、循环语句 while</h3>");	
+	document.write("使用while循环打印 0 到 4<br>");
+	var a = 0;
+	while(a<5){
+		p(a);
+		a++;
+	}
+	//3、循环语句 do-while
+	document.write("<h3>3、循环语句 do-while</h3>");	
+	document.write("使用do-while循环打印 0 到 4<br>");
+	var b = 0;
+	do{
+		p(b);
+		b++;
+	}while(b<5);
+	//4、增强型循环语句
+	document.write("<h3>4、增强型循环语句</h3>");
+	p("forEach是增强的for循环，主要用于遍历数组。因为目前还没有学习到数组，所以暂时不讲解。可以通过这个链接，跳转到forEach的学习");
+	//5、继续下一次循环
+	document.write("<h3>5、继续下一次循环</h3>");
+	document.write("使用for循环打印 0 到 4<br>如果发现是3，就<span style='color:red'>放弃本次循环，并且进入下一次</span>循环<br>");
+	for(i=0;i<5;i++){
+		if(i==3)
+			continue;
+		p(i);
+	}	
+	//6、终止循环
+	document.write("<h3>6、终止循环</h3>");
+	document.write("使用for循环打印 0 到 4<br>如果发现是3，就<span style='color:red'>终止循环，循环体结束 </span><br>");
+	   
+	for(i=0;i<5;i++){
+	  if(i==3)
+	    break;
+	  p(i);
+	}	
+</script>
+</head>
+<body>
+
+</body>
+</html>
