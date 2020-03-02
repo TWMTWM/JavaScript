@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function goBackLast(){
+		history.back();
+	}
+	function goBackLastLast(){
+		history.go(-2); //-1表示上次，-2表示上上次，以次类推
+	}
+</script>
+</head>
+<body>
+	<button onclick="goBackLast()">返回上一次访问</button>
+	<br>
+	<button onclick="goBackLastLast()">返回上上次访问</button>
+</body>
+</html>
