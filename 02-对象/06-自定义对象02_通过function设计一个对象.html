@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//通过function设计一个对象
+	document.write("<h3>2、通过function设计一个对象</h3>");
+	function Hero(name){
+		this.name = name;
+		this.kill = function(){
+			document.write(this.name + "正在杀敌<br>");
+		}
+	}
+	var teemo = new Hero("提莫");
+	teemo.kill();
+</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function p(s){
+		document.write(s);
+		document.write("<br>");
+	}
+	//1、通过new Object创建对象
+	document.write("<h3>1、通过new Object创建对象</h3>");
+	var hero = new Object();
+	hero.name = "盖伦";//定义一个属性name,并赋值
+	hero.kill = function(){
+		document.write(hero.name + "正在杀敌");//定义一个函数kill
+	}
+	hero.kill();
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
