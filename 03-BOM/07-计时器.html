@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//1、只执行一次
+	document.write("<h3>1、只执行一次</h3>");
+	function printTime1(){
+		var d = new Date();
+		var h = d.getHours();
+		var m = d.getMinutes();
+		var s = d.getSeconds();
+		document.getElementById("time1").innerHTML = h + ":" + m + ":" + s;
+	}
+	function showTimeIn3Seconds(){
+		setTimeout(printTime1,3000);
+	}
+	//2、不停地重复执行
+	document.write("<h3>2、不停地重复执行</h3>");
+	function printTime2(){
+		var d = new Date();
+		var h = d.getHours();
+		var m = d.getMinutes();
+		var s = d.getSeconds();
+		document.getElementById("time2").innerHTML = h+":"+m+":"+s;
+	}
+	var t = setInterval(printTime2,1000);
+	//3、终止重复执行
+	document.write("<h3>3、终止重复执行</h3>");
+	var t = setInterval(printTime3,1000);
+	function printTime3(){
+		  var d = new Date();
+		  var h= d.getHours();
+		  var m= d.getMinutes();
+		  var s= d.getSeconds();
+		  document.getElementById("time3").innerHTML= h+":"+m+":"+s;
+		  if(s%5==0){
+			 clearInterval(t); 
+		  }
+	}
+	//4、不要在setInterval调用的函数中使用document.write();
+	document.write("<h3>4、不要在setInterval调用的函数中使用document.write();</h3>");
+	
+</script>
+</head>
+<body>
+	<div id="time1"></div>
+	<button onclick="showTimeIn3Seconds()">点击后3秒钟后显示当前时间，并且只显示一次</button>
+	<p>每隔1秒，打印当前时间</p>
+	<div id="time2"></div>
+	<div id="time3"></div>
+</body>
+</html>
