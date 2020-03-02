@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function f1(){
+	  //函数f1是存在的
+	}
+	try{
+	   document.write("试图调用不存在的函数f2()<br>");
+	    f2();  //调用不存在的函数f2();
+	}
+	catch(err){
+	   document.write("捕捉到错误产生:");
+	    document.write(err.message);
+	}
+	 
+	document.write("<p>因为错误被捕捉了，所以后续的代码能够继续执行</p>");	
+</script>
+</head>
+<body>
+
+</body>
+</html>
