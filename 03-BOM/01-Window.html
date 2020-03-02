@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function p(s){
+		document.write(s);
+		document.write("<br>");
+	}
+	//1、获取文档显示区域的高度和宽度
+	document.write("<h3>1、获取文档显示区域的高度和宽度</h3>");
+	p("文档内容");
+	p("文档显示区域的宽度：" + window.innerWidth);
+	p("文档显示区域的高度：" + window.innerHeight);
+	//2、获取外部窗体的宽度和高度
+	document.write("<h3>2、获取外部窗体的宽度和高度</h3>");
+	p("浏览器的宽度：" + window.outerWidth);
+	p("浏览器的高度：" + window.outerHeight);
+	//3、打开一个新的窗口
+	document.write("<h3>3、打开一个新的窗口</h3>");
+	function openNewWindow(){
+		myWindow = window.open("/");
+	}
+</script>
+</head>
+<body>
+	<button onclick="openNewWindow()">打开一个新的窗口</button>
+</body>
+</html>
