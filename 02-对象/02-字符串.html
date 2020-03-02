@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function p(s){
+		document.write(s);
+		document.write("<br>");
+	}
+	//1、创建字符串对象
+	p("<h3>1、创建字符串对象</h3>");
+	var a = "5";
+	var b = new String("6");
+	p("变量a的值是：" + a);
+	p("变量a的类型是：" + (typeof a));
+	p("变量b的值是：" + b);
+	p("变量b的类型是：" + (typeof b));
+	//2、字符串长度
+	p("<h3>2、字符串长度</h3>");
+	var c = new String("Hello Javascript");
+	document.write("通过.length属性获取字符串'Hello JavaScript'的长度：" + c.length);
+	//3、返回指定位置的字符
+	p("<h3>2、字符串长度</h3>");
+	var d = new String("Hello Javascript");
+	p("字符串d的值：" + d);
+	p("通过charAt(0)获取位置0的字符串：" + d.charAt(0));
+	p("通过charCodeAt(0)获取位置0的字符的Unicode码：" + d.charCodeAt(0));//返回H对应的Unicode码 72
+	//4、字符串拼接
+	p("<h3>4、字符串拼接</h3>");
+	var e = new String("Hello ");
+	var f = new String("JavaScript");
+	p("字符串e的值：" + e);
+	p("字符串f的值：" + f);
+	p("通过函数concat()把e和f连接起来：" + e.concat(f));
+	//5、子字符串出现的位置
+	p("<h3>5、子字符串出现的位置</h3>");
+	var g = new String("Hello JavaScript");
+	p("字符串g的值：" + g);
+	p("通过 indexOf('a')获取子字符'a'第一次出现的位置： " + g.indexOf("a"));
+	p("通过 lastIndexOf('a') 获取子字符'a'最后出现的位置：" + g.lastIndexOf("a"));
+	//6、比较两段字符串是否相同
+	p("<h3>6、比较两段字符串是否相同</h3>");
+	var h = new String("Hello");
+	var i = new String("Hello");
+	var j = new String("aloha");
+	
+	p("字符串h的值：" + h);
+	p("字符串i的值：" + i);
+	p("字符串j的值：" + j);
+	
+	p("通过localeCompare()判断h 和 i是否相等：" + h.localeCompare(i));
+	p("通过localeCompare()判断h 和 j是否相等：" + h.localeCompare(j));
+	//7、截取一段子字符串
+	p("<h3>7、截取一段子字符串</h3>");
+	var k = new String("Hello JavaScript");
+	p("字符串k的值：" + k);
+	p("k.substring(0,3)获取0到3的字符串：" + k.substring(0,3));
+	p("左闭右开，取得到0，取不到3");
+	//8、根据分隔符，把字符串转换为数组
+	p("<h3>8、根据分隔符，把字符串转换为数组</h3>");
+	var l = "Hello This is JavaScript !";
+	p("字符串l的值：" + l);
+	var m = l.split(" ");
+	p("通过空格分隔split(' '),得到数组：" + m);
+	var n = l.split(" ",2);
+	p('通过空格分隔split(" ",2),得到数组，并且只保留前两个：' + n);
+	//9、替换子字符串
+	p("<h3>9、替换子字符串</h3>");
+	var o = new String("Hello JavaScript");
+	p("这个是原字符串：" + o);
+	var p1 = o.replace("a","o");
+	p("只替换第一个 a:" + p1);
+	var regS = new RegExp("a","g");
+	var q = o.replace(regS,"o");
+	p("替换掉所有的a:第一种方法：Regs：" + q);
+	var r = o.replace(/a/g,"o");
+	p("替换掉所有的a:第二种方法：/a/g：" + r);
+	//10、返回基本类型
+	p("<h3>10、返回基本类型</h3>");
+	var s = new String("Hello JavaScript");
+	var t = s.charAt(0);
+	p("charAt返回的值：" + t);
+	p("其类型是：" + typeof t)
+	var u = s.concat("!!!");
+	p("concatt返回的值：" + u);
+	p("其类型是：" + typeof u)	
+	var v = s.substring(0,5);
+	p("substring返回的值：" + v);
+	p("其类型是：" + typeof v)	
+	//11、练习
+	p("<h3>11、练习</h3>");
+	function getValue(id){
+		return document.getElementById(id).value;
+	}
+	function setValue(id,value){
+		document.getElementById(id).value = value;
+	}
+	function replace(){
+		var src = getValue("src");
+		var search = getValue("search");
+		var replace = getValue("replace");
+		var regS = new RegExp(search,"g");
+		var result = src.replace(regS,replace);
+		setValue("result",result);
+	}
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>源字符串：</td>
+			<td><textarea id="src" rows="" cols="">example</textarea></td>
+		</tr>
+		<tr>
+			<td>查询</td>
+			<td><input type="text" id="search" value="a"></td>
+		</tr>		
+		<tr>
+			<td>替换为：</td>
+			<td><input type="text" id="replace" value="e"></td>
+		</tr>		
+		<tr>
+			<td>替换结果：</td>
+			<td><textarea id="result" rows="" cols=""></textarea></td>
+		</tr>		
+		<tr>
+			<td colspan="2" align="center"><button onclick="replace()">替换</button></td>
+			<td></td>
+		</tr>		
+		
+	</table>
+</body>
+</html>
