@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function p(s){
+		document.write(s);
+		document.write("<br>");
+	}
+	//1、基本算数运算符
+	document.write("<h3>1、基本算数运算符</h3>");
+	p("1+2="+ (1+2));
+	p("5-3="+ (5-3));
+	p("3*2="+ (3*2));
+	p("9/3="+ (9/3));
+	p("10%3="+ (10%3));	
+	//2、自增、自减运算符
+	document.write("<h3>2、自增、自减运算符</h3>");
+	var a = 5;
+	document.write('a++ 是先取值，再运算，所以打印出来是：'+a++); //先取值 ，即5
+	 
+	document.write("<br>");
+	var b = 5;
+	document.write('++b 是先运算，再取值，所以打印出来是：'+ ++b); //先运算，再取值，即6	
+	//3、赋值运算符
+	document.write("<h3>3、赋值运算符</h3>");
+	x = 5;
+	x+= 6;
+	document.write('x+=6就是 x=x+6的意思，所以最后的值就等于: '+x);	
+	//4、+运算符的多态
+	document.write("<h3>4、+运算符的多态</h3>");
+	document.write('当+两边都是数字的时候，+就是加法运算符，所以1+2='+(1+2));
+	document.write("<br>");
+	document.write('当+任意一边是字符串的时候，+就是字符串连接符，所以1+\"2\"='+ (1+"2"));	
+</script>
+</head>
+<body>
+
+</body>
+</html>
